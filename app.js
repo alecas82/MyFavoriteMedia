@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
 
+app.set("view engine", "ejs");
 
-app.get("/", (req, res) => res.send("This is the landing page!!!"));
+
+app.get("/", (req, res) => {
+    res.render("home")
+});
 
 
-app.listen(3000, () => console.log("My app server is running!!"));
+app.listen(process.env.PORT, () => console.log("My app server is running!!"));
 // Root link is: http://localhost:3000/
